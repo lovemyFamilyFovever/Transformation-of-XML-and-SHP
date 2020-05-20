@@ -1,0 +1,19 @@
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\xml解析\xml解析\bin\Release\xml解析.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\xml解析\xml解析\bin\Release\xml解析.exe
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\xml解析\xml解析\bin\Release\xml解析.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\xml解析\xml解析\obj\Release\xml解析.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\xml解析\xml解析\obj\Release\xml解析.Form1.resources
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\xml解析\xml解析\obj\Release\xml解析.Properties.Resources.resources
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\xml解析\xml解析\obj\Release\xml解析.csproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\xml解析\xml解析\obj\Release\xml解析.exe
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\xml解析\xml解析\obj\Release\xml解析.pdb
+E:\o.cn\镇江市自规局\xml解析\xml解析\bin\Release\xml解析.exe.config
+E:\o.cn\镇江市自规局\xml解析\xml解析\obj\Release\xml解析.exe
+E:\o.cn\镇江市自规局\xml解析\xml解析\obj\Release\xml解析.pdb
+E:\o.cn\镇江市自规局\xml解析\xml解析\bin\Release\xml解析.exe
+E:\o.cn\镇江市自规局\xml解析\xml解析\bin\Release\xml解析.pdb
+E:\o.cn\镇江市自规局\xml解析\xml解析\obj\Release\xml解析.csprojAssemblyReference.cache
+E:\o.cn\镇江市自规局\xml解析\xml解析\obj\Release\xml解析.Form1.resources
+E:\o.cn\镇江市自规局\xml解析\xml解析\obj\Release\xml解析.Properties.Resources.resources
+E:\o.cn\镇江市自规局\xml解析\xml解析\obj\Release\xml解析.csproj.GenerateResource.cache
+E:\o.cn\镇江市自规局\xml解析\xml解析\obj\Release\xml解析.csproj.CoreCompileInputs.cache

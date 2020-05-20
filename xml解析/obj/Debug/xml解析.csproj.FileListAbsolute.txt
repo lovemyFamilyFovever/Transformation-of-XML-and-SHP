@@ -1,0 +1,19 @@
+c:\users\administrator\documents\visual studio 2015\Projects\xml解析\xml解析\obj\Debug\xml解析.csprojResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2015\Projects\xml解析\xml解析\obj\Debug\xml解析.Properties.Resources.resources
+c:\users\administrator\documents\visual studio 2015\Projects\xml解析\xml解析\obj\Debug\xml解析.csproj.GenerateResource.Cache
+c:\users\administrator\documents\visual studio 2015\Projects\xml解析\xml解析\bin\Debug\xml解析.exe.config
+c:\users\administrator\documents\visual studio 2015\Projects\xml解析\xml解析\bin\Debug\xml解析.exe
+c:\users\administrator\documents\visual studio 2015\Projects\xml解析\xml解析\bin\Debug\xml解析.pdb
+c:\users\administrator\documents\visual studio 2015\Projects\xml解析\xml解析\obj\Debug\xml解析.exe
+c:\users\administrator\documents\visual studio 2015\Projects\xml解析\xml解析\obj\Debug\xml解析.pdb
+c:\users\administrator\documents\visual studio 2015\Projects\xml解析\xml解析\obj\Debug\xml解析.Form1.resources
+E:\o.cn\镇江市自规局\xml解析\xml解析\bin\Debug\xml解析.exe.config
+E:\o.cn\镇江市自规局\xml解析\xml解析\bin\Debug\xml解析.exe
+E:\o.cn\镇江市自规局\xml解析\xml解析\bin\Debug\xml解析.pdb
+E:\o.cn\镇江市自规局\xml解析\xml解析\obj\Debug\xml解析.Form1.resources
+E:\o.cn\镇江市自规局\xml解析\xml解析\obj\Debug\xml解析.Properties.Resources.resources
+E:\o.cn\镇江市自规局\xml解析\xml解析\obj\Debug\xml解析.csproj.GenerateResource.cache
+E:\o.cn\镇江市自规局\xml解析\xml解析\obj\Debug\xml解析.csproj.CoreCompileInputs.cache
+E:\o.cn\镇江市自规局\xml解析\xml解析\obj\Debug\xml解析.exe
+E:\o.cn\镇江市自规局\xml解析\xml解析\obj\Debug\xml解析.pdb
+E:\o.cn\镇江市自规局\xml解析\xml解析\obj\Debug\xml解析.csprojAssemblyReference.cache

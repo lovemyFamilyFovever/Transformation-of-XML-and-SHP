@@ -40,6 +40,8 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -105,6 +107,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.textBox5);
+            this.tabPage2.Controls.Add(this.textBox4);
             this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.textBox3);
             this.tabPage2.Controls.Add(this.textBox2);
@@ -175,6 +179,22 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(185, 8);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(298, 21);
+            this.textBox4.TabIndex = 5;
+            this.textBox4.Text = "E:\\o.cn\\镇江市自规局\\shp、xml转换\\问题一\\转坐标后的xml";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(689, 8);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(298, 21);
+            this.textBox5.TabIndex = 6;
+            this.textBox5.Text = "E:\\o.cn\\镇江市自规局\\shp、xml转换\\问题一\\原始xml";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -208,6 +228,8 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }
 

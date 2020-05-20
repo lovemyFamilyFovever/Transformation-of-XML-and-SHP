@@ -77,17 +77,17 @@ namespace xml解析
                     DataTable dt = ds.Tables[0];
                     dt.Columns["ModelName"].SetOrdinal(4);
 
-                    DataTableToString(dt,fileName);
+                    DataTableToString(dt, fileName);
                 }
             }
-            MessageBox.Show("数据导出","转换成功!");
+            MessageBox.Show("数据导出", "转换成功!");
         }
 
-        public static string DataTableToString(DataTable dt,string filePath)
+        public static string DataTableToString(DataTable dt, string filePath)
         {
-            filePath=filePath.Replace("xml","txt");
+            filePath = filePath.Replace("xml", "txt");
             System.Text.StringBuilder builder = new StringBuilder();
-            foreach(DataRow dr in dt.Rows)
+            foreach (DataRow dr in dt.Rows)
             {
                 builder.AppendLine(dr[0].ToString() + '&' + dr[1].ToString() + '&' + dr[2].ToString() + '&' + dr[3].ToString() + '&' + dr[4].ToString());
                 //builder.AppendLine('('+dr[0].ToString() + ',' + dr[1].ToString() + ")&" + dr[2].ToString() + '&' + dr[3].ToString() + '&' + dr[4].ToString());
@@ -105,16 +105,7 @@ namespace xml解析
 
         private void button4_Click(object sender, EventArgs e)
         {
-
-            string sPath = "";
-            FolderBrowserDialog folder = new FolderBrowserDialog();
-            folder.Description = "选择所有文件存放目录";
-            if (folder.ShowDialog() == DialogResult.OK)
-            {
-
-                sPath = folder.SelectedPath;
-            }
-
+            string sPath = this.textBox4.Text;
             string[] files = Directory.GetFiles(sPath, "*.xml", SearchOption.AllDirectories);
 
             for (int i = 0; i < files.Length; i++)
@@ -125,15 +116,7 @@ namespace xml解析
 
         private void button3_Click(object sender, EventArgs e)
         {
-
-            string sPath = "";
-            FolderBrowserDialog folder = new FolderBrowserDialog();
-            folder.Description = "选择所有文件存放目录";
-            if (folder.ShowDialog() == DialogResult.OK)
-            {
-
-                sPath = folder.SelectedPath;
-            }
+            string sPath = this.textBox5.Text;
 
             string[] files = Directory.GetFiles(sPath, "*.xml", SearchOption.AllDirectories);
 
@@ -145,7 +128,7 @@ namespace xml解析
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (this.textBox2.Text != ""&& this.textBox3.Text != "")
+            if (this.textBox2.Text != "" && this.textBox3.Text != "")
             {
                 getXMLData();
             }
@@ -158,6 +141,7 @@ namespace xml解析
             string[] files1 = fileNames1.Split(new string[] { "\r\n" }, StringSplitOptions.None);
 
             DataSet ds1 = new DataSet();
+            DataSet ds2 = new DataSet();
             for (int i = 0; i < files1.Length; i++)
             {
                 string fileName = files1[i];
@@ -165,53 +149,83 @@ namespace xml解析
                 if (fileName != "")
                 {
                     doc.Load(fileName);
-
-                    
                     TextReader tr = new StringReader(doc.InnerXml);
                     ds1.ReadXml(tr);
-
-                    DataTable dt = ds.Tables[0];
-                    dt.Columns["ModelName"].SetOrdinal(4);
-
                 }
-            }
 
-            //原始的xml
-            string fileNames2 = textBox3.Text;
-            string[] files2 = fileNames2.Split(new string[] { "\r\n" }, StringSplitOptions.None);
-            DataSet ds2 = new DataSet();
-            for (int i = 0; i < files2.Length; i++)
-            {
-                string fileName = files2[i];
-                XmlDocument doc = new XmlDocument();
-                if (fileName != "")
+                string oldfileName = files1[i].Replace("转坐标后的xml", "原始xml");
+                XmlDocument doc2 = new XmlDocument();
+                if (oldfileName != "")
                 {
-                    doc.Load(fileName);
-
+                    doc.Load(oldfileName);
                     TextReader tr = new StringReader(doc.InnerXml);
                     ds2.ReadXml(tr);
-
-                    DataTable dt = ds2.Tables[0];
-                    dt.Columns["ModelName"].SetOrdinal(4);
-
-                    //DataTableToString(dt, fileName);
                 }
+
+                var dt1 = ds1.Tables[0];
+                dt1.Columns["ModelName"].SetOrdinal(4);
+                var dt2 = ds2.Tables[0];
+                dt2.Columns["ModelName"].SetOrdinal(4);
+
+                dt1.Columns.Add("modelNmamNew", typeof(string));
+                for (int j = 0; j < dt1.Rows.Count; j++)
+                {
+                    dt1.Rows[j]["modelNmamNew"] = dt2.Rows[j]["ModelName"];
+                }
+                dt1.Columns.Remove("ModelName");
+                dt1.Columns["modelNmamNew"].ColumnName = "ModelName";
+
+                string filePath = files1[i].Replace("转坐标后的xml", "列数据替换结果文件");
+                string[] namelist = filePath.Split('\\');
+                string newFileFolderPath = string.Empty;
+                for (int k = 0; k < namelist.Length - 1; k++)//E:\o.cn\镇江市自规局\shp、xml转换\问题一\列数据替换结果文件\03G\主核心区现状.xml
+                {
+                    newFileFolderPath += namelist[k] + "\\";
+                }
+
+                if (newFileFolderPath != "")
+                {
+                    if (!Directory.Exists(newFileFolderPath))
+                        Directory.CreateDirectory(newFileFolderPath);
+                }
+
+                string fileAllName = newFileFolderPath + namelist[namelist.Length - 1];
+                if (newFileFolderPath != "")
+                {
+                    DataTableToXml(dt1, fileAllName);
+                }                   
+
+            }
+
+            MessageBox.Show("succsss");
+        }
+        public static void DataTableToXml(DataTable vTable,string filepath)
+
+        {
+
+            string savePath = Application.StartupPath.ToString();
+
+            if (!Directory.Exists(savePath))
+
+            {
+
+                Directory.CreateDirectory(savePath);
+
             }
             
 
-            for(int i = 0; i < ds1.Tables.Count; i++)
+            //如果文件DataTable.xml存在则直接删除
+
+            if (File.Exists(filepath))
+
             {
-                var dt1 = ds1.Tables[i];
-                var dt2 = ds2.Tables[i];
 
-                object[] obj = new object[1];
-                for (int j = 0; i < dt1.Rows.Count; i++)
-                {
-                    DataTable1.Rows[i].ItemArray.CopyTo(obj, 0);
-                    newDataTable.Rows.Add(obj);
-                }
+                File.Delete(filepath);
+
             }
-        }
 
+            vTable.WriteXml(filepath);
+
+        }
     }
 }
